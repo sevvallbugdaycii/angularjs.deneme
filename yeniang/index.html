@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item"><a href="#">Library</a></li>
+                      <li class="breadcrumb-item"><a href="#">Data</a></li>
+                    </ol>
+                  </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container"   ng-app="myApp" ng-controller="MyController">
+        <div class="row">
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Others</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-8">
+            <table class="table table-striped" >
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody >
+                <tr>
+                  <th scope="row" ng-click="show = !show"><a href="#" class="text-decoration-none" >1</a></th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row" ng-click="show = !show"><a href="#" class="text-decoration-none" >2</a></th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row" ng-click="show = !show"><a href="#" class="text-decoration-none" >3</a></th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="form-group" ng-show="show">
+            <div class="container" id="demo">
+                <div class="card">
+                  <form action="action">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="card">
+                          <div class="card-header">
+                            FOOD
+                          </div>
+                          <div class="card-body">
+                            <form>
+                              <span>Food-Time / like it</span>
+                              <div ng-repeat="input in inputs">
+                              <div class="input-group" ng-dblclick="add()">
+                                <input type="text" class="form-control" ng-model = "input.food">
+                                <input type="time" class="form-control" ng-model="input.time">
+                                <input type="text" class="form-control" ng-model="input.like">
+                              </div>
+                            </div>
+                              <span>beverage-time amount</span>
+                              <div ng-repeat = "inp in inps">
+                              <div class="input-group" ng-dblclick="addi()">
+                                <input type="text" class="form-control" ng-model ="inp.beverage">
+                                <input type="time" class="form-control" ng-model ="inp.time">
+                                <input type="text" class="form-control" ng-model="inp.amount">
+                              </div>
+                            </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card">
+                          <div class="card-header">
+                            diaper/potty
+                          </div>
+                          <div class="card-body" ng-repeat="diaper in diapers">
+                              <div>
+                            <div class="input-group" ng-dblclick = "addb()">
+                              <input type="time" ng-model="diaper.diaper" class="form-control">
+                              <input type="text" ng-model="diaper.potty" class="form-control">
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            Nap Times
+                          </div>
+                          <div class="card-body" ng-repeat = "nap in naps">
+                            <div class="input-group" ng-dblclick = "addn()">
+                              <input type="time" ng-model="nap.time" class="form-control">
+                              <input type="text" ng-model="nap.napp" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card">
+                          <div class="card-header">
+                            Overal Mood
+                          </div>
+                          <div class="card-body">
+                            <div class="input-group">
+                              <input type="text" aria-label="First name" class="form-control">
+      
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            Favorite Toys
+                          </div>
+                          <div class="card-body" ng-repeat = "toy in toys">
+                            <div class="input-group" ng-dblclick = "addt()" >
+                              <input type="text" ng-model="toy.name" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header">
+                            Learning Activites
+                          </div>
+                          <div class="card-body" ng-repeat = "activity in activities">
+                            <div class="input-group" ng-dblclick="adda()">
+                              <input type="text" class="form-control" ng-model="activity.name">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-header">
+                            Activites/Play Time
+                          </div>
+                          <div class="card-body" ng-repeat = "act in acts">
+                            <div class="input-group" ng-dblclick = "addc()">
+                              <input type="text" class="form-control" ng-model="act.name">
+                              <input type="text" class="form-control" ng-model="act.playtime">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-header">
+                            Special /care
+                          </div>
+                          <div class="card-body" ng-repeat = "special in specials">
+                            <div class="input-group" ng-dblclick="adds()">
+                              <input type="text"  ng-model="speacial.name" class="form-control">
+                              <input type="time"  ng-model="special.time" class="form-control">
+                              <input type="text" ng-model="special.care" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-header">
+                            supplıes needed
+                          </div>
+                          <div class="card-body" ng-repeat="sup in supplies">
+                            <div class="input-group" ng-dblclick="adde()">
+                              <input type="text" ng-model="sup.name"  class="form-control">
+      
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-header">
+                            notes/special concerns
+                          </div>
+                          <div class="card-body">
+                            <div class="input-group">
+                              <input type="text" aria-label="First name" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+      </div>
+      <script>
+          angular.module('myApp',[]).controller('MyController', function($scope){
+      $scope.show=false;
+       $scope.inputs = [
+          {
+            food : '',
+            time: '',
+            like : ''
+
+          }];
+          $scope.inps=[
+              {
+                  beverage : '',
+                  time : '',
+                  amount :''
+              }
+          ];
+          $scope.diapers = [
+              {
+                 diaper : '',
+                 potty:''
+              }
+          ]
+          $scope.naps = [
+              {
+                  time : '',
+                  napp:''
+              }
+          ]
+          $scope.toys=[
+              {
+                  name:''
+              }
+              
+          ]
+          $scope.activities=[
+              {
+                  name:'',
+              }
+          ]
+          $scope.acts=[
+              {
+                  name:'',
+                  playtime:''
+              }
+          ]
+          $scope.specials = [
+              {
+                  name:'',
+                  time:'',
+                  care:'',
+              }
+          ]
+          $scope.supplies=[
+              {
+                  name:'',
+              }
+          ]
+      $scope.add=function(){
+          var dataObj={food:''};
+          $scope.inputs.push(dataObj);
+      }
+      $scope.addi=function(){
+          var dataObjj={beverage:''};
+          $scope.inps.push(dataObjj);
+      }
+      $scope.addb=function(){
+          var datad = {diaper : ''};
+          $scope.diapers.push(datad);
+      }
+      $scope.addn=function(){
+          var datan = {nap:''};
+          $scope.naps.push(datan);
+      }
+      $scope.addt = function(){
+          var datat = {toy:''};
+          $scope.toys.push(datat);
+      }
+      $scope.adda = function(){
+          var dataa = {activity:''};
+          $scope.activities.push(dataa);
+      }
+      $scope.addc = function(){
+          var datac ={act:''};
+          $scope.acts.push(datac);
+      }
+      $scope.adds=function(){
+          var datas = {special:''};
+          $scope.specials.push(datas);
+      }
+      $scope.adde=function(){
+          var dat = {sup:''};
+          $scope.supplies.push(dat);
+      }
+  });
+   
+   
+
+
+</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+</body>
+</html>
