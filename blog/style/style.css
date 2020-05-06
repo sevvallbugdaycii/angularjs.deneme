@@ -1,0 +1,34 @@
+body{
+	background-color: #615400;
+background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+}
+nav{
+	background-color: #dceb9f;
+background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+}
+.container{
+	background-color: #dceb9f;
+background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+margin-top:5%;
+}
+.text{
+	width:80%;
+	height:500px;
+	border-radius:5px;
+}
+form{
+	text-align:center;
+}
+.heading{
+	width:60%;
+	border-radius:5px;
+	
+}
+#yayinla{
+	margin-top:20px;
+	margin-bottom:150px;
+}
+h2{
+	margin-top:50px;
+	line-height:60px;
+}
