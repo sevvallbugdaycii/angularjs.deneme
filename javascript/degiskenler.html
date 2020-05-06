@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+</head>
+<body>
+	<input type="text" id="girilenDeger" />
+	<button id="goster">Goster</button>
+	<p id="yazi">Burası değişecek</p> 
+	<script type="text/javascript">
+	   //var x;//x degiskeni tanımlandı 
+	   //x=35;//x'e deger atandı.
+	   //x="Hello world!!";
+	   //alert(x);//x degerini pop-up olarak gösterildi.
+	   //bir kelime bir harf tanımlayacağın zaman tırnakları unutma.
+	   
+	   //Başka bir kullanım.
+	   //var x=7;
+	   //var y=4;
+	   //alert(x+y);
+	  //degiskeni nasıl pratik bir şekilde kullanırız ?
+	   document.getElementById("goster").onclick=function(){
+	     //input içine girilen değeri bilmediğimiz için hemen bir değişken oluşturuyoruz.
+	      //var girilen="";//boş string tanımladık.//değişken kullanmadan yapmak için değişkeni sildik.
+		  //girilen=
+		  
+	      //alert(girilen);
+		  //yazının değerini girilen e değilde direk girilen değere atarsak yine aynı sonucu buluruz.
+		  //böyle bir durum varken neden değişken kullanıyoruz?
+		  //çünkü değişken kullandığında her zaman bu tip uzun yazıları yazman gerekmez.Yani birçok yerde kullanıcak olabiliriz,uzun uzun yazmak yerine bu yöntemi kullanıyoruz.
+		  document.getElementById("yazi").innerHTML=document.getElementById("girilenDeger").value;
+		  //girilen;
+	   }
+	
+	</script>
+	
+</body>
+</html>
